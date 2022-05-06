@@ -18,7 +18,7 @@ external identifier for the artist in the external *musicbrainz.org* database.
 
 Songs without a year information are discarded.
 
-515576 songs should be exported to the CSV
+10000 songs should be exported to the CSV due to memory constraints
 
 3\. Run the script
 

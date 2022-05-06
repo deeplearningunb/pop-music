@@ -7,4 +7,5 @@ FROM
 WHERE
 	title IS NOT NULL AND title != ''
 	AND release IS NOT NULL AND release != ''
-	AND year IS NOT NULL AND year != 0;
+	AND year IS NOT NULL AND year != 0
+	LIMIT 10000;
