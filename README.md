@@ -14,13 +14,19 @@ sqlite3 -header -csv track_metadata.db < filter_data.sql > track_metadata.csv
 ```
 
 The attribute `artist_mbid` is dropped from the dataset because it is only an
-external identifier for the artist in the external *musicbrainz.org* database.
+external identifier for the artist in the *musicbrainz.org* database.
 
-Songs without a year information are discarded.
+The attribute `track_7digitalid` is dropped from the dataset because it is only
+an external identifier for the artist in the external *7digital* database.
+
+Songs without a `year`, `shs_work` or `shs_perf` information are discarded.
 
 10000 songs should be exported to the CSV due to memory constraints
 
-3\. Run the script
+3\. Run the script and log its result
+```bash
+python -u analyse.py 2>&1 | tee "$(date --iso-8601='minutes').log"
+```
 
 
 [1] BERTIN-MAHIEUX, Thierry. Million Song Dataset, official website.
